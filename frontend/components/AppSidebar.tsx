@@ -55,7 +55,7 @@ const collection2Endpoints = [
 
 export function AppSidebar() {
   return (
-    <Sidebar>
+    <Sidebar className="h-full">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Your Collections</SidebarGroupLabel>
