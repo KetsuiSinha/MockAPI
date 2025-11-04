@@ -33,9 +33,9 @@ export function ParamSection({ params, setParams, headers, setHeaders, body, set
   }
 
   return (
-    <div className="flex flex-col flex-1 min-h-0 w-full bg-white">
+    <div className="flex flex-col flex-1 min-h-0 w-full" style={{ backgroundColor: 'var(--color-background)' }}>
       <Tabs defaultValue="params" className="flex flex-col h-full w-full">
-        <TabsList className="w-full justify-start rounded-none border-b bg-gray-50 px-4 sticky top-0 z-10">
+        <TabsList className="w-full justify-start rounded-none px-4 sticky top-0 z-10" style={{ borderBottom: '1px solid var(--color-border)', backgroundColor: 'var(--color-muted)' }}>
           <TabsTrigger value="params">Params</TabsTrigger>
           <TabsTrigger value="headers">Headers</TabsTrigger>
           <TabsTrigger value="body">Body</TabsTrigger>
@@ -46,7 +46,7 @@ export function ParamSection({ params, setParams, headers, setHeaders, body, set
           <ScrollArea className="h-full p-4">
             <div className="space-y-3">
               {params.map((param, index) => (
-                <div key={index} className="flex gap-2 items-center bg-gray-50 p-2 rounded-md">
+                <div key={index} className="flex gap-2 items-center p-2 rounded-md" style={{ backgroundColor: 'var(--color-muted)' }}>
                   <Input
                     placeholder="Key"
                     value={param.key}
@@ -65,7 +65,7 @@ export function ParamSection({ params, setParams, headers, setHeaders, body, set
                     onClick={() => removeParam(index)}
                     className="hover:bg-red-100"
                   >
-                    <Trash2 className="w-4 h-4 text-red-500" />
+                    <Trash2 className="w-4 h-4" style={{ color: 'var(--color-destructive)' }} />
                   </Button>
                 </div>
               ))}
@@ -83,7 +83,7 @@ export function ParamSection({ params, setParams, headers, setHeaders, body, set
           <ScrollArea className="h-full p-4">
             <div className="space-y-3">
               {headers.map((header, index) => (
-                <div key={index} className="flex gap-2 items-center bg-gray-50 p-2 rounded-md">
+                <div key={index} className="flex gap-2 items-center p-2 rounded-md" style={{ backgroundColor: 'var(--color-muted)' }}>
                   <Input
                     placeholder="Key"
                     value={header.key}
@@ -102,7 +102,7 @@ export function ParamSection({ params, setParams, headers, setHeaders, body, set
                     onClick={() => removeHeader(index)}
                     className="hover:bg-red-100"
                   >
-                    <Trash2 className="w-4 h-4 text-red-500" />
+                    <Trash2 className="w-4 h-4" style={{ color: 'var(--color-destructive)' }} />
                   </Button>
                 </div>
               ))}

@@ -55,7 +55,7 @@ const collection2Endpoints = [
 
 export function AppSidebar() {
   return (
-    <Sidebar className="h-full">
+    <Sidebar style={{ height: '100%' }}>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Your Collections</SidebarGroupLabel>
@@ -66,7 +66,7 @@ export function AppSidebar() {
                   <CollapsibleTrigger asChild>
                     <SidebarMenuButton>
                       <span>Collection_1</span>
-                      <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+                      <ChevronDown style={{ marginLeft: 'auto', transition: 'transform 0.2s' }} className="group-data-[state=open]/collapsible:rotate-180" />
                     </SidebarMenuButton>
                   </CollapsibleTrigger>
                   <CollapsibleContent>
@@ -74,9 +74,9 @@ export function AppSidebar() {
                       {collection1Endpoints.map((endpoint) => (
                         <SidebarMenuItem key={endpoint.method + endpoint.url}>
                           <SidebarMenuButton asChild>
-                            <a href="#" className="flex items-center gap-2">
-                              <span className="text-xs font-semibold">{endpoint.method}</span>
-                              <span className="text-sm">{endpoint.url}</span>
+                            <a href="#" style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-2, 0.5rem)' }}>
+                              <span style={{ fontSize: 'var(--font-size-xs, 0.75rem)', fontWeight: 'var(--font-weight-semibold, 600)' }}>{endpoint.method}</span>
+                              <span style={{ fontSize: 'var(--font-size-sm, 0.875rem)' }}>{endpoint.url}</span>
                             </a>
                           </SidebarMenuButton>
                         </SidebarMenuItem>
@@ -91,7 +91,7 @@ export function AppSidebar() {
                   <CollapsibleTrigger asChild>
                     <SidebarMenuButton>
                       <span>Collection_2</span>
-                      <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+                      <ChevronDown style={{ marginLeft: 'auto', transition: 'transform 0.2s' }} className="group-data-[state=open]/collapsible:rotate-180" />
                     </SidebarMenuButton>
                   </CollapsibleTrigger>
                   <CollapsibleContent>
@@ -99,9 +99,9 @@ export function AppSidebar() {
                       {collection2Endpoints.map((endpoint) => (
                         <SidebarMenuItem key={endpoint.method + endpoint.url}>
                           <SidebarMenuButton asChild>
-                            <a href="#" className="flex items-center gap-2">
-                              <span className="text-xs font-semibold">{endpoint.method}</span>
-                              <span className="text-sm">{endpoint.url}</span>
+                            <a href="#" style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-2, 0.5rem)' }}>
+                              <span style={{ fontSize: 'var(--font-size-xs, 0.75rem)', fontWeight: 'var(--font-weight-semibold, 600)' }}>{endpoint.method}</span>
+                              <span style={{ fontSize: 'var(--font-size-sm, 0.875rem)' }}>{endpoint.url}</span>
                             </a>
                           </SidebarMenuButton>
                         </SidebarMenuItem>

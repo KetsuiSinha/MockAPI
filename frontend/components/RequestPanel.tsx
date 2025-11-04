@@ -32,11 +32,11 @@ export function RequestPanel() {
   }
 
   return (
-    <div className="flex flex-col w-full h-full bg-white">
+    <div className="flex flex-col w-full h-full" style={{ backgroundColor: 'var(--color-background)' }}>
       <ResizablePanelGroup direction="vertical" className="w-full h-full">
         {/* Top Panel: Request Section */}
         <ResizablePanel defaultSize={50} minSize={20}>
-          <div className="flex flex-col w-full h-full bg-white">
+          <div className="flex flex-col w-full h-full" style={{ backgroundColor: 'var(--color-background)' }}>
             {/* URL Bar */}
             <div className="p-3 border-b flex items-center gap-2">
               <Select value={method} onValueChange={setMethod}>
@@ -80,7 +80,7 @@ export function RequestPanel() {
         </ResizablePanel>
 
         {/* Resize Handle */}
-        <ResizableHandle withHandle className="bg-gray-100 hover:bg-gray-200 transition-colors" />
+        <ResizableHandle withHandle className="transition-colors" style={{ backgroundColor: 'var(--color-muted)', '--hover-bg': 'var(--color-muted-hover)' } as React.CSSProperties} />
 
         {/* Bottom Panel: Response Section with ScrollArea */}
         <ResizablePanel defaultSize={50} minSize={20}>
