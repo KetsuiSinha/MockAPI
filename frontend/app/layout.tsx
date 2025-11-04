@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="h-screen w-screen overflow-hidden">
         <SidebarProvider>
-          <div className="flex h-full w-full">
+          <div className="flex h-screen w-full">
             {/* Sidebar */}
             <AppSidebar />
 
