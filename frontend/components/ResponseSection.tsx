@@ -1,5 +1,6 @@
 "use client"
 import { Textarea } from "@/components/ui/textarea"
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 
 interface ResponseSectionProps {
   response: string
@@ -9,7 +10,7 @@ interface ResponseSectionProps {
 
 export function ResponseSection({ response, responseStatus, responseTime }: ResponseSectionProps) {
   return (
-    <div className="flex-1 w-full h-full overflow-hidden">
+    <div className="flex-1 w-full h-full">
       <div className="flex flex-col w-full h-full bg-gray-50">
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b bg-white">
@@ -22,20 +23,22 @@ export function ResponseSection({ response, responseStatus, responseTime }: Resp
           )}
         </div>
 
-        {/* Body */}
-        <div className="flex-1 overflow-auto h-full p-4">
+        {/* Body with Scrollbars */}
+        <ScrollArea className="flex-1 h-full p-4">
           {response ? (
             <Textarea
               value={response}
               readOnly
-              className="font-mono text-sm w-full h-full resize-none bg-white rounded-md p-3"
+              className="font-mono text-sm w-full min-h-[400px] resize-none bg-white rounded-md p-3"
             />
           ) : (
-            <div className="flex items-center justify-center h-full text-gray-400 text-sm bg-white border rounded-md">
+            <div className="flex items-center justify-center min-h-[400px] text-gray-400 text-sm bg-white border rounded-md">
               Click <span className="mx-1 font-medium">Send</span> to view the response
             </div>
           )}
-        </div>
+          <ScrollBar orientation="vertical" />
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
       </div>
     </div>
   )

@@ -11,6 +11,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable"
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 
 export function RequestPanel() {
   const [method, setMethod] = useState("GET")
@@ -62,8 +63,8 @@ export function RequestPanel() {
               </Button>
             </div>
 
-            {/* Params + Body Section */}
-            <div className="flex-1 min-h-0 overflow-hidden">
+            {/* Params + Body Section with ScrollArea */}
+            <ScrollArea className="flex-1 min-h-0 p-0">
               <ParamSection
                 params={params}
                 setParams={setParams}
@@ -72,22 +73,26 @@ export function RequestPanel() {
                 body={body}
                 setBody={setBody}
               />
-            </div>
+              <ScrollBar orientation="vertical" />
+              <ScrollBar orientation="horizontal" />
+            </ScrollArea>
           </div>
         </ResizablePanel>
 
         {/* Resize Handle */}
         <ResizableHandle withHandle className="bg-gray-100 hover:bg-gray-200 transition-colors" />
 
-        {/* Bottom Panel: Response Section */}
+        {/* Bottom Panel: Response Section with ScrollArea */}
         <ResizablePanel defaultSize={50} minSize={20}>
-          <div className="w-full h-full overflow-hidden">
+          <ScrollArea className="w-full h-full">
             <ResponseSection
               response={response}
               responseStatus={responseStatus}
               responseTime={responseTime}
             />
-          </div>
+            <ScrollBar orientation="vertical" />
+            <ScrollBar orientation="horizontal" />
+          </ScrollArea>
         </ResizablePanel>
       </ResizablePanelGroup>
     </div>
