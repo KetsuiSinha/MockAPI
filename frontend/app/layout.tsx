@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import "./globals.css"
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/AppSidebar"
+import ClientLayout from "@/components/ClientLayout"
 
 export const metadata: Metadata = {
   title: "API Client",
@@ -11,25 +12,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="h-screen w-screen overflow-hidden">
+      <body className="h-screen w-screen overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
         <SidebarProvider>
           <div className="flex h-screen w-full">
             {/* Sidebar */}
             <AppSidebar />
 
-            {/* Main Content Area */}
-            <main className="flex-1 flex flex-col overflow-hidden bg-gray-50">
-              {/* Sidebar Toggle Button */}
-              <div className="border-b bg-white p-2 shadow-sm flex items-center">
-                <SidebarTrigger />
-                <span className="ml-2 font-medium text-gray-700">API Client</span>
-              </div>
-
-              {/* Page Content */}
-              <div className="flex-1 overflow-auto">
-                {children}
-              </div>
-            </main>
+            {/* Main Content Area handled by client component */}
+            <ClientLayout>{children}</ClientLayout>
           </div>
         </SidebarProvider>
       </body>
