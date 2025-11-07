@@ -11,19 +11,20 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   return (
     <main className="flex-1 flex flex-col overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-[var(--border)] bg-[var(--card)] p-2 shadow-sm">
-        <div className="flex items-center">
-          <SidebarTrigger />
-          <span className="ml-2 font-medium text-[var(--foreground)]">API Client</span>
-        </div>
-        <Button
-          variant="default"
-          onClick={() => setOpen(true)}
-          className="text-sm font-medium bg-[var(--primary)] text-[var(--primary-foreground)] transition-all hover:brightness-105 hover:opacity-90"
-        >
-          Generate API
-        </Button>
-      </div>
+      <div className="flex items-center justify-between border-b bg-[var(--card)] border-[var(--border)] text-[var(--foreground)] p-2 shadow-sm">
+  <div className="flex items-center">
+    <SidebarTrigger />
+    <span className="ml-2 font-medium">API Client</span>
+  </div>
+  <Button
+    variant="default"
+    onClick={() => setOpen(true)}
+    className="text-sm font-medium bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary-hover)]"
+  >
+    Generate API
+  </Button>
+</div>
+
 
       {/* Page content */}
       <div className="flex-1 overflow-auto">{children}</div>
