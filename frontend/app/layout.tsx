@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import { SidebarProvider } from "@/components/ui/sidebar"
-import { AppSidebar } from "@/components/AppSidebar"
-import ClientLayout from "@/components/ClientLayout"
+import { AppSidebar } from "@/components/generator/AppSidebar"
+import ClientLayout from "@/components/generator/ClientLayout"
 
 export const metadata: Metadata = {
   title: "API Client",

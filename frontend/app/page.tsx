@@ -1,4 +1,4 @@
-import { RequestPanel } from "@/components/RequestPanel"
+import { RequestPanel } from "@/components/generator/RequestPanel"
 
 export default function Page() {
   return (
