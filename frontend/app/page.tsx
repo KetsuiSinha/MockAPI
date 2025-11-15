@@ -1,9 +1,12 @@
-import { RequestPanel } from "@/components/generator/RequestPanel"
+import LandingLayout from "@/components/landing/LandingPage";
+import Homepage from "@/components/landing/HeroSection"; // your hero content
 
-export default function Page() {
+export default function HomePage() {
   return (
-    <div className="w-full h-full">
-      <RequestPanel />
+    <div className="overflow-hidden">
+    <LandingLayout>
+      <Homepage />
+    </LandingLayout>
     </div>
-  )
+  );
 }
