@@ -383,7 +383,7 @@ export default function WorkflowPage() {
 
           <button
             onClick={saveWorkflow}
-            className="px-4 py-2 text-[13px] font-medium text-white/70 hover:text-white bg-white/[0.03] 
+            className="px-4 py-2 text-[13px] font-medium text-white/70 hover:text-white bg-white/[0.03]
                 border border-white/[0.08] rounded-lg flex items-center gap-2 transition-all active:scale-95"
           >
             <Save size={14} />
@@ -392,7 +392,7 @@ export default function WorkflowPage() {
 
           <button
             onClick={runWorkflow}
-            className="px-4 py-2 text-[13px] font-medium text-black bg-white hover:bg-white/90 rounded-lg 
+            className="px-4 py-2 text-[13px] font-medium text-black bg-white hover:bg-white/90 rounded-lg
                 flex items-center gap-2 transition-all active:scale-95"
           >
             <Play size={14} fill="black" />
@@ -473,7 +473,7 @@ export default function WorkflowPage() {
                       onKeyDown={handleKeyDown}
                       placeholder="Describe your API workflow... (e.g., Create a login API with email validation)"
                       disabled={isGenerating}
-                      className="w-full bg-transparent text-[14px] text-white placeholder-white/40 
+                      className="w-full bg-transparent text-[14px] text-white placeholder-white/40
                           resize-none focus:outline-none leading-relaxed max-h-32 min-h-[24px]"
                       rows={1}
                       style={{
